@@ -15,9 +15,7 @@
     "type": "git"
   },
   "release": {
-    "branches": [
-      "main"
-    ]
+    "branches": ["main"]
   },
   "scripts": {
     "start": "tsdx watch",
