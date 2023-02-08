@@ -1,13 +1,13 @@
 import React, { FC } from 'react'
 
-interface ExampleComponentProps {
+export interface ExampleComponentProps {
   label: string
   id?: string
   className?: string
   style?: React.CSSProperties
 }
 
-const ExampleComponent: FC<ExampleComponentProps> = ({
+export const ExampleComponent: FC<ExampleComponentProps> = ({
   className = '', style, label, id
 }) => (
   <div
@@ -18,5 +18,3 @@ const ExampleComponent: FC<ExampleComponentProps> = ({
     {label}
   </div>
 )
-
-export default ExampleComponent
