@@ -8,7 +8,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "repository": {
     "url": "https://github.com/castromaciel/ui-rollingcode",
@@ -39,7 +39,7 @@
     "trailingComma": "es5"
   },
   "name": "ui-rollingcode",
-  "author": "mlcastro",
+  "author": "castromaciellr",
   "module": "dist/ui-rollingcode.esm.js",
   "size-limit": [
     {
