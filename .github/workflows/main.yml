@@ -6,6 +6,8 @@ on:
   pull_request: 
     branches: [main]
     
+permissions: write-all
+    
 jobs:
   build:
     name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
