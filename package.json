@@ -19,7 +19,7 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "test:watch": "tsdx test --watch",
-    "lint": "tsdx lint",
+    "lint": "eslint src/**/*.tsx --fix",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
