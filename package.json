@@ -43,16 +43,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ui-rollingcode",
+  "name": "ui-rc-components",
   "author": "castromaciellr",
-  "module": "dist/ui-rollingcode.esm.js",
+  "module": "dist/ui-rc-components.esm.js",
   "size-limit": [
     {
-      "path": "dist/ui-rollingcode.cjs.production.min.js",
+      "path": "dist/ui-rc-components.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/ui-rollingcode.esm.js",
+      "path": "dist/ui-rc-components.esm.js",
       "limit": "10 KB"
     }
   ],

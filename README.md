@@ -1,9 +1,9 @@
-# ui-rollingcode
+# ui-rc-components
 
 ## Usage
 
 ```ts
-import { ExampleComponent } from 'ui-rollingcode';
+import { ExampleComponent } from 'ui-ui-rc-components';
 ```
 
 ```tsx
