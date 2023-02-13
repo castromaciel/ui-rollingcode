@@ -96,8 +96,5 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ],
-  "dependencies": {
-    "registry-url": "^6.0.1"
-  }
+  ]
 }
