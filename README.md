@@ -28,11 +28,11 @@ yarn add ui-rc-components
 ## Usage
 
 ```ts
-import { ExampleComponent } from 'ui-rc-components';
+import { Example } from 'ui-rc-components';
 ```
 
 ```tsx
-<ExampleComponent 
+<Example
   label='Example label'
 />
 ```
