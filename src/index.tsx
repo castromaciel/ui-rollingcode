@@ -1,2 +1,2 @@
-export * from './example'
+export * from './_example'
 export * from './structure'
