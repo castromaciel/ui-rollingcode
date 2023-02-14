@@ -3,18 +3,22 @@ import React from 'react'
 import { Card } from '../Card'
 
 const classicCard = { 
-  buttonRight: 'Show me more',
+  buttonRight: {
+    label: 'Show me more',
+    onClick: () => jest.fn()
+  },
   description: 'Lorem ipsum dolor sit amet, consectetur adip',
-  image: 'https://fastly.picsum.photos/id/237/300/300',
-  onClickRight: () => jest.fn(),
+  image: 'https://picsum.photos/id/237/300/300',
   title: 'Classic Card'
 }
 
 const productCard = {
-  buttonRight: 'Show me more',
+  buttonRight: {
+    label: 'Show me more',
+    onClick: () => jest.fn()
+  },
   description: 'Lorem ipsum dolor sit amet, consectetur adip',
-  image: 'https://fastly.picsum.photos/id/237/300/300',
-  onClickRight: () => jest.fn(),
+  image: 'https://picsum.photos/id/237/300/300',
   price: '2000',
   title: 'Classic Card'
 }
@@ -37,8 +41,7 @@ describe('Card', () => {
   test('Click "Show me more" button', () => {
     const handleClick = jest.fn()
 
-    render(<Card {...productCard} mode="product" onClickRight={handleClick} />)
-
+    render(<Card {...productCard} mode="product" buttonRight={{ ...productCard.buttonRight, onClick: handleClick }} />)
     const buttonElement = screen.getByText('Show me more')
     fireEvent.click(buttonElement)
 

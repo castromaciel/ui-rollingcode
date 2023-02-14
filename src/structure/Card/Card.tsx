@@ -3,39 +3,62 @@ import cardStyles from './card.module.scss'
 
 export type CardModes = | 'classic' | 'product'
 
+export type CardButtonProps = {
+  label: string
+  onClick: MouseEventHandler<HTMLButtonElement>
+}
+
 export interface CardProps {
-  buttonRight: string
+  buttonRight: CardButtonProps
   description: string
   image: string
   title: string
-  onClickRight: MouseEventHandler<HTMLButtonElement>
-  
+
   altImage?: string
-  buttonLeft?: string
+  buttonLeft?: CardButtonProps
   className?: string
   id?: string
   mode?: CardModes
-  onClickLeft?: MouseEventHandler<HTMLButtonElement>
   style?: React.CSSProperties
   price?: string | number
   symbol?: string
 }
 
+const defaultProps: CardProps = {
+  buttonRight: {
+    label: 'Show me more',
+    onClick: () => {}
+  },
+  description: 'Lorem ipsum dolor sit amet, consectetur.',
+  image: 'https://picsum.photos/id/231/300/300',
+  title: 'Card example',
+
+  altImage: 'Random image',
+  buttonLeft: {
+    label: 'Show me more',
+    onClick: () => {}
+  },
+  className: '',
+  id: '',
+  mode: 'classic',
+  price: '100',
+  style: {},
+  symbol: '$'
+}
+
 const Card: FC<CardProps> = ({
+  buttonRight,
+  description,
+  image,
+  title,
   altImage,
   buttonLeft,
-  buttonRight,
-  className = '',
-  description,
+  className,
   id,
-  image,
-  mode = 'classic',
-  onClickLeft,
-  onClickRight,
+  mode,
+  price,
   style,
-  symbol = '$',
-  price = 100,
-  title
+  symbol
 }) => (
   <article id={id} className={`${className} ${cardStyles.card}`} style={style}>
     <header className={`${cardStyles.img_container}`}>
@@ -53,9 +76,8 @@ const Card: FC<CardProps> = ({
           ? (
             <div className={`${cardStyles.buttons_container}`}>
               { buttonLeft
-                ? <button type="button" className={`${cardStyles.button_left}`} onClick={onClickLeft}>{buttonLeft}</button>
-                : null }
-              <button type="button" onClick={onClickRight}>{buttonRight}</button>
+               && <button type="button" className={`${cardStyles.button_left}`} onClick={buttonLeft.onClick}>{buttonLeft.label}</button>}
+              <button type="button" onClick={buttonRight.onClick}>{buttonRight.label}</button>
             </div>
           )
           : (
@@ -66,7 +88,7 @@ const Card: FC<CardProps> = ({
                   {symbol} 
                   {price}
                 </p>
-                <button type="button" onClick={onClickRight}>{buttonRight}</button>
+                <button type="button" onClick={buttonRight.onClick}>{buttonRight.label}</button>
               </div>
             </>
           )
@@ -75,5 +97,7 @@ const Card: FC<CardProps> = ({
     </section>
   </article>
 )
+
+Card.defaultProps = defaultProps
 
 export default Card
