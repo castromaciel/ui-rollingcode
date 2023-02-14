@@ -75,7 +75,7 @@ const Card: FC<CardProps> = ({
         mode === 'classic'
           ? (
             <div className={`${cardStyles.buttons_container}`}>
-              { buttonLeft
+              { buttonLeft?.label
                && <button type="button" className={`${cardStyles.button_left}`} onClick={buttonLeft.onClick}>{buttonLeft.label}</button>}
               <button type="button" onClick={buttonRight.onClick}>{buttonRight.label}</button>
             </div>
