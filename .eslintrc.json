@@ -3,7 +3,8 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["airbnb", "airbnb/hooks"],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error"],
@@ -22,6 +23,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
+    "react/default-props-match-prop-types": "off",
     "semi": ["error", "never"]
   }
 }
