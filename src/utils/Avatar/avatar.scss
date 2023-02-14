@@ -1,0 +1,36 @@
+.rc-avatar {
+  display: block;
+  &.size {
+    &_sm {
+      width: 32px;
+      height: 32px;
+    }
+    &_md {
+      width: 64px;
+      height: 64px;
+    }
+    &_lg {
+      width: 96px;
+      height: 96px;
+    }
+    &_xl {
+      width: 128px;
+      height: 128px;
+    }
+    &_xxl {
+      width: 256px;
+      height: 256px;
+    }
+
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle {
+    border-radius: 100%;
+  }
+  
+}
